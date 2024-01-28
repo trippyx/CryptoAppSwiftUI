@@ -4,18 +4,24 @@
 //
 //  Created by Kuldeep Singh on 28/01/24.
 //
-
+import Combine
 import Foundation
 
 class HomeViewModal:ObservableObject{
     @Published var allCoins:[CoinModel] = []
     @Published var portfolioCoins:[CoinModel] = []
-    
+    private let dataService = CoinDataService()
+    var coinCancallbe = Set<AnyCancellable>()
     init(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.allCoins.append(DeveloperPreview.shared.coin)
-            self.portfolioCoins.append(DeveloperPreview.shared.coin)
-        })
+       addSubscibers()
+    }
+    
+    
+    func addSubscibers(){
+       dataService.$allCoins.sink {[weak self] modal in
+            print(modal)
+            self?.allCoins = modal
+       }.store(in: &coinCancallbe)
     }
     
 }
