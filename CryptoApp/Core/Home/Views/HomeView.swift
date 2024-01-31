@@ -20,6 +20,7 @@ struct HomeView: View {
             //Content Layer
             VStack(content: {
                 homeheader
+                SearchBarView(searchText: $vm.searchText)
                 coloumnTiles
                 if !showPortfolio{
                     allCoinList
@@ -92,6 +93,7 @@ extension HomeView{
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
             }
         }
+        .scrollIndicators(.hidden)
         .listStyle(PlainListStyle())
     }
     
@@ -102,6 +104,7 @@ extension HomeView{
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
             }
         }
+        .scrollIndicators(.hidden)
         .listStyle(PlainListStyle())
     }
     
