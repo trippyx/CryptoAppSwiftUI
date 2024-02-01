@@ -14,6 +14,10 @@ class DeveloperPreview{
     private init(){}
     
     
+    let stat1 = StaticsModal(title: "Market Cap", value: "$12.5Bn", percentageChange: 25.36)
+    let stat2 = StaticsModal(title: "Total Volume", value: "$1.23Tr")
+    let stat3 = StaticsModal(title: "Portfolio Value", value: "$50.4K",percentageChange: -12.34)
+    
     let homeVM = HomeViewModal()
     let coin = CoinModel(
        id: "bitcoin",
