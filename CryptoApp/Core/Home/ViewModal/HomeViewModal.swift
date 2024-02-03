@@ -15,6 +15,7 @@ class HomeViewModal:ObservableObject{
     @Published var searchText = ""
     private let coindDataService = CoinDataService()
     private let marketDataService = MarketDataService()
+    private let portfolioDataService = PortfolioDataService()
     
     var coinCancallbe = Set<AnyCancellable>()
     init(){
@@ -46,6 +47,27 @@ class HomeViewModal:ObservableObject{
             }.store(in: &coinCancallbe)
         
         
+        $allCoins.combineLatest(portfolioDataService.$savedEntities)
+            .map { (coinModel,portEntities) -> [CoinModel] in
+                
+                coinModel.compactMap { (coin) -> CoinModel? in
+                    guard let entity = portEntities.first(where: {$0.coinID == coin.id}) else {
+                        return nil
+                    }
+                    return coin.updateHolding(amount:entity.amount)
+                }
+            }
+            .sink {[weak self] retunedCoin in
+                self?.portfolioCoins = retunedCoin
+            }.store(in: &coinCancallbe)
+        
+        
+        
+    }
+    
+    
+    func updatePortfolio(coin:CoinModel,amount:Double){
+        portfolioDataService.updatePortfolio(coin: coin, amount: amount)
     }
     
     private func filterCoins(text:String,coins:[CoinModel]) -> [CoinModel]{

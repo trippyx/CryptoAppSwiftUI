@@ -34,6 +34,14 @@ struct PortfolioView: View {
                     trailingButton
                 }
             })
+            .onChange(of: vm.searchText) { oldValue, newValue in
+                if newValue == ""{
+                    withAnimation(.bouncy){
+                        removeSelectedCoin()
+                    }
+                    
+                }
+            }
         }
     }
     
@@ -105,7 +113,9 @@ extension PortfolioView{
             Image(systemName: "checkmark")
                 .opacity(showCheckMark ? 1.0 : 0.0)
             Button(action: {
-                
+                guard let selectedCoin = selectedCoin , let amount = Double(quantityText) else { return }
+                vm.updatePortfolio(coin: selectedCoin, amount:amount)
+                saveButtonPressed()
             }, label: {
                 Text("Save".uppercased())
             })
@@ -114,10 +124,20 @@ extension PortfolioView{
         })
         .font(.headline)
     }
+    
+    private func updateSelectedCoint(coin:CoinModel){
+        selectedCoin = coin
+        if let portfolioCoin = vm.portfolioCoins.first(where: {$0.id == coin.id}),let amount = portfolioCoin.currentHolding{
+            quantityText = "\(amount) "
+        }else{
+            quantityText = ""
+        }
+    }
+    
     private var coinLogoList:some View{
         ScrollView(.horizontal,showsIndicators: false)  {
             LazyHStack(content: {
-                ForEach(vm.allCoins) { coin in
+                ForEach(vm.searchText.isEmpty ? vm.portfolioCoins : vm.allCoins) { coin in
                     CoinLogoView(coin: coin)
                         .frame(width: 75)
                         .padding(4)
@@ -127,7 +147,7 @@ extension PortfolioView{
                         )
                         .onTapGesture {
                             withAnimation(.easeIn) {
-                                selectedCoin = coin
+                                updateSelectedCoint(coin: coin)
                             }
                         }
                 }
