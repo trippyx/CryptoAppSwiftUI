@@ -38,6 +38,7 @@
 		0CDDBBA32B6D3527002612AE /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDDBBA22B6D3527002612AE /* PortfolioView.swift */; };
 		0CDDBBA52B6D3B3C002612AE /* XMarkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDDBBA42B6D3B3C002612AE /* XMarkButtonView.swift */; };
 		0CDDBBA72B6D3E6E002612AE /* CoinLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDDBBA62B6D3E6E002612AE /* CoinLogoView.swift */; };
+		0CF6E51F2B6F5BC200E6B340 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF6E51E2B6F5BC200E6B340 /* HapticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		0CDDBBA22B6D3527002612AE /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		0CDDBBA42B6D3B3C002612AE /* XMarkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButtonView.swift; sourceTree = "<group>"; };
 		0CDDBBA62B6D3E6E002612AE /* CoinLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogoView.swift; sourceTree = "<group>"; };
+		0CF6E51E2B6F5BC200E6B340 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				0C0CC0CA2B67E7C50024703A /* NetworkingManager.swift */,
 				0C0397192B6939DD008FE4C4 /* LocalFileManager.swift */,
+				0CF6E51E2B6F5BC200E6B340 /* HapticManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				0C0CC0D22B67EC5F0024703A /* CoinImageViewModal.swift in Sources */,
 				0C1838112B662CB800004B04 /* CircleButtonView.swift in Sources */,
 				0C76EBD82B6BD2330047B7F3 /* HomeStatView.swift in Sources */,
+				0CF6E51F2B6F5BC200E6B340 /* HapticManager.swift in Sources */,
 				0C36027B2B6A885E00FF53A9 /* SearchBarView.swift in Sources */,
 				0CDDBBA52B6D3B3C002612AE /* XMarkButtonView.swift in Sources */,
 				0CDDBBA72B6D3E6E002612AE /* CoinLogoView.swift in Sources */,
