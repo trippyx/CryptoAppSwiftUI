@@ -16,6 +16,7 @@ struct HomeView: View {
     @EnvironmentObject private var vm:HomeViewModal
     @State private var selectedCoin:CoinModel? = nil
     @State private var showDetialView = false
+    @State private var showSettings = false
     var body: some View {
         ZStack(content: {
             Color.theme.background
@@ -39,6 +40,9 @@ struct HomeView: View {
                         .transition(.move(edge: .trailing))
                 }
                 Spacer(minLength: 0)
+            })
+            .sheet(isPresented: $showSettings, content: {
+                SettingView()
             })
         })
         .background(
@@ -76,6 +80,8 @@ extension HomeView{
                     HapticManager.notification(type: .success)
                     if showPortfolio{
                         showPortfolioView.toggle()
+                    }else{
+                        showSettings.toggle()
                     }
                 }
             Spacer()
