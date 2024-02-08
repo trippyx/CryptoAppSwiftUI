@@ -29,6 +29,7 @@
 		0C3381802B7278C80049BAFC /* CoinDetailDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C33817F2B7278C80049BAFC /* CoinDetailDataService.swift */; };
 		0C36027B2B6A885E00FF53A9 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36027A2B6A885E00FF53A9 /* SearchBarView.swift */; };
 		0C36027D2B6A90A200FF53A9 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36027C2B6A90A200FF53A9 /* UIApplication.swift */; };
+		0C44BB5C2B751EEA00E16E35 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44BB5B2B751EEA00E16E35 /* String.swift */; };
 		0C7004132B66D03700F7C057 /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7004122B66D03700F7C057 /* CoinDataService.swift */; };
 		0C76EBD82B6BD2330047B7F3 /* HomeStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C76EBD72B6BD2330047B7F3 /* HomeStatView.swift */; };
 		0C76EBDA2B6BD51B0047B7F3 /* MarketDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C76EBD92B6BD51B0047B7F3 /* MarketDataModal.swift */; };
@@ -71,6 +72,7 @@
 		0C33817F2B7278C80049BAFC /* CoinDetailDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailDataService.swift; sourceTree = "<group>"; };
 		0C36027A2B6A885E00FF53A9 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		0C36027C2B6A90A200FF53A9 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		0C44BB5B2B751EEA00E16E35 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0C7004122B66D03700F7C057 /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
 		0C76EBD72B6BD2330047B7F3 /* HomeStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatView.swift; sourceTree = "<group>"; };
 		0C76EBD92B6BD51B0047B7F3 /* MarketDataModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataModal.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				0CCF516C2B667C8700A8E553 /* Double.swift */,
 				0C36027C2B6A90A200FF53A9 /* UIApplication.swift */,
 				0CCAA38E2B73F4420008FFE6 /* Date.swift */,
+				0C44BB5B2B751EEA00E16E35 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				0C76EBDC2B6BDF600047B7F3 /* MarketDataService.swift in Sources */,
 				0C0CC0CB2B67E7C50024703A /* NetworkingManager.swift in Sources */,
 				0C1838132B6630BF00004B04 /* CircleButtonAnimationView.swift in Sources */,
+				0C44BB5C2B751EEA00E16E35 /* String.swift in Sources */,
 				0CCF516B2B66796200A8E553 /* PreviewProvider.swift in Sources */,
 				0CDDBBA32B6D3527002612AE /* PortfolioView.swift in Sources */,
 				0C33817E2B7278AA0049BAFC /* DetailViewModal.swift in Sources */,

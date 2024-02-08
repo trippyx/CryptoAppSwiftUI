@@ -12,6 +12,10 @@ class DetailViewModal:ObservableObject{
     private let coinDetailService:CoinDetailDataService
     @Published var overViewStatics : [StaticsModal] = []
     @Published var additionalStatics : [StaticsModal] = []
+    @Published var coinDescription : String? =  nil
+    @Published var webSiteUrl : String? = nil
+    @Published var redditUrl : String? = nil
+    
     var canclanble = Set<AnyCancellable>()
     @Published var coin:CoinModel
     init(coin:CoinModel){
@@ -29,6 +33,16 @@ class DetailViewModal:ObservableObject{
             self?.overViewStatics = returnedArray.overView
             self?.additionalStatics = returnedArray.additional
         }.store(in: &canclanble)
+        
+        
+        coinDetailService.$coinDetails
+            .sink {[weak self] returnedCoinDetail in
+                self?.coinDescription = returnedCoinDetail?.readableDesciption
+                self?.webSiteUrl = returnedCoinDetail?.links?.homepage?.first
+                self?.redditUrl = returnedCoinDetail?.links?.subredditURL
+            }
+            .store(in: &canclanble)
+        
     }
     
     

@@ -22,7 +22,7 @@ struct DetailLoadingView:View {
 
 struct DetailView: View {
     @StateObject var vm : DetailViewModal
-    
+    @State private var showFullDesciption = false
     private let columns : [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -42,10 +42,12 @@ struct DetailView: View {
                 VStack(spacing: 20, content: {
                     overView
                     Divider()
+                    desciption
                     overViewGrid
                     additionalView
                     Divider()
                     addtionalViewGrid
+                    websiteSection
                 })
                 .padding()
             })
@@ -62,6 +64,53 @@ struct DetailView: View {
 
 
 extension DetailView{
+    
+    private var websiteSection:some View{
+        VStack(alignment:.leading,spacing:20,content: {
+            if let webSiteUrl = vm.webSiteUrl , let url = URL(string: webSiteUrl){
+                Link("WebSite", destination: url)
+            }
+            
+            if let redditUrl = vm.redditUrl , let url = URL(string:redditUrl){
+                Link("Reddit", destination: url)
+            }
+            
+        })
+        .foregroundStyle(.blue)
+        .frame(maxWidth: .infinity,alignment:.leading)
+        .font(.headline)
+    }
+    
+    private var desciption:some View{
+        ZStack {
+            if let coinDescription = vm.coinDescription, !coinDescription.isEmpty{
+                
+                VStack(alignment:.leading,content: {
+                    Text(coinDescription)
+                        .lineLimit(showFullDesciption ? nil : 3)
+                        .font(.callout)
+                        .foregroundStyle(Color.theme.secondaryText)
+                    
+                    Button(action: {
+                        withAnimation(.smooth) {
+                            showFullDesciption.toggle()
+                        }
+                    }, label: {
+                        Text(showFullDesciption ? "Read less ..." : "Read more...")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .padding(.vertical,4)
+                    })
+                    .foregroundStyle(.blue)
+                    
+                   
+                })
+                .frame(maxWidth: .infinity,alignment:.leading)
+               
+            }
+        }
+    }
+    
     var navigationBarTrailingItems:some View{
         HStack(content: {
             Text(vm.coin.symbol?.uppercased() ?? "")
