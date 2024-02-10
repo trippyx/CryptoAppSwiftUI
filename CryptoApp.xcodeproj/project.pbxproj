@@ -35,6 +35,8 @@
 		0C76EBD82B6BD2330047B7F3 /* HomeStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C76EBD72B6BD2330047B7F3 /* HomeStatView.swift */; };
 		0C76EBDA2B6BD51B0047B7F3 /* MarketDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C76EBD92B6BD51B0047B7F3 /* MarketDataModal.swift */; };
 		0C76EBDC2B6BDF600047B7F3 /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C76EBDB2B6BDF600047B7F3 /* MarketDataService.swift */; };
+		0CC35C532B77270700ED32AF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CC35C522B77270700ED32AF /* Launch Screen.storyboard */; };
+		0CC35C552B77280900ED32AF /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC35C542B77280900ED32AF /* LaunchView.swift */; };
 		0CC8C3462B6E63B4007DC2A0 /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0CC8C3442B6E63B4007DC2A0 /* PortfolioContainer.xcdatamodeld */; };
 		0CC8C3482B6E77A0007DC2A0 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC8C3472B6E77A0007DC2A0 /* PortfolioDataService.swift */; };
 		0CCAA38F2B73F4420008FFE6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCAA38E2B73F4420008FFE6 /* Date.swift */; };
@@ -79,6 +81,8 @@
 		0C76EBD72B6BD2330047B7F3 /* HomeStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatView.swift; sourceTree = "<group>"; };
 		0C76EBD92B6BD51B0047B7F3 /* MarketDataModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataModal.swift; sourceTree = "<group>"; };
 		0C76EBDB2B6BDF600047B7F3 /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
+		0CC35C522B77270700ED32AF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0CC35C542B77280900ED32AF /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		0CC8C3452B6E63B4007DC2A0 /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
 		0CC8C3472B6E77A0007DC2A0 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
 		0CCAA38E2B73F4420008FFE6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -180,6 +184,10 @@
 		0C1838082B662A7800004B04 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0CC35C502B7726E900ED32AF /* Launch */,
+				0C44BB5D2B7544DB00E16E35 /* Setting */,
+				0CF6E5202B6F7F1600E6B340 /* Detail */,
+				0C18380E2B662CA400004B04 /* Componets */,
 				0C1838092B662ADC00004B04 /* Home */,
 			);
 			path = Core;
@@ -188,9 +196,6 @@
 		0C1838092B662ADC00004B04 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				0C44BB5D2B7544DB00E16E35 /* Setting */,
-				0CF6E5202B6F7F1600E6B340 /* Detail */,
-				0C18380E2B662CA400004B04 /* Componets */,
 				0C18380B2B662AE600004B04 /* ViewModal */,
 				0C18380A2B662AE100004B04 /* Views */,
 			);
@@ -277,6 +282,23 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		0CC35C502B7726E900ED32AF /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				0CC35C512B7726FE00ED32AF /* Views */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		0CC35C512B7726FE00ED32AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0CC35C522B77270700ED32AF /* Launch Screen.storyboard */,
+				0CC35C542B77280900ED32AF /* LaunchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0CF6E5202B6F7F1600E6B340 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CC35C532B77270700ED32AF /* Launch Screen.storyboard in Resources */,
 				0C1838042B6624A700004B04 /* Assets.xcassets in Resources */,
 				0C1837FD2B66234800004B04 /* Preview Assets.xcassets in Resources */,
 			);
@@ -389,6 +412,7 @@
 				0C76EBDA2B6BD51B0047B7F3 /* MarketDataModal.swift in Sources */,
 				0C1F13422B6BC5140088172C /* StaticsModal.swift in Sources */,
 				0C0CC0D22B67EC5F0024703A /* CoinImageViewModal.swift in Sources */,
+				0CC35C552B77280900ED32AF /* LaunchView.swift in Sources */,
 				0C1838112B662CB800004B04 /* CircleButtonView.swift in Sources */,
 				0C76EBD82B6BD2330047B7F3 /* HomeStatView.swift in Sources */,
 				0CF6E5242B6F7F3500E6B340 /* DetailView.swift in Sources */,
@@ -550,7 +574,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -584,7 +608,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

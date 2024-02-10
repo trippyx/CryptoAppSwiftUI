@@ -16,13 +16,28 @@ struct CryptoAppApp: App {
     }
     
     @StateObject private var vm = HomeViewModal()
+    @State private var showLaunch = true
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                HomeView()
-                    .toolbar(.hidden, for: .navigationBar)
+            ZStack{
+                NavigationStack {
+                    HomeView()
+                        .toolbar(.hidden, for: .navigationBar)
+                }
+                .environmentObject(vm)
+                
+                ZStack(content: {
+                    if showLaunch{
+                        LaunchView(showLaunch: $showLaunch)
+                            .transition(.move(edge: .leading))
+                    }
+                })
+                .zIndex(2.0)
+                
+                
+               
             }
-            .environmentObject(vm)
+          
         }
     }
 }
